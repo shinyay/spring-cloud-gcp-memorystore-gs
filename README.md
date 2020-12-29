@@ -23,6 +23,16 @@ Spring Boot automatically configures a suitable `CacheManager` to serve as a pro
 If you have not defined a bean of type `CacheManager` or a `CacheResolver`,
 Spring Boot tries to detect the following providers:
 
+- Generic
+- JCache (JSR-107)
+- EhCache 2.x
+- Hazelcast
+- Infinispan
+- Couchbase
+- Redis
+- Caffeine
+- Simple
+
 ## Demo
 
 ## Features
