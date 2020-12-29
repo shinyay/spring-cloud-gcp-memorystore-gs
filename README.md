@@ -17,6 +17,8 @@ The post-processor handles the following annotations:
 - `@CachePut`
 - `@CacheEvict`
 
+Spring Boot automatically configures a suitable `CacheManager` to serve as a provider for the relevant cache.
+
 ## Demo
 
 ## Features
