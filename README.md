@@ -19,6 +19,10 @@ The post-processor handles the following annotations:
 
 Spring Boot automatically configures a suitable `CacheManager` to serve as a provider for the relevant cache.
 
+##### Supported Cache Providers
+If you have not defined a bean of type `CacheManager` or a `CacheResolver`,
+Spring Boot tries to detect the following providers:
+
 ## Demo
 
 ## Features
