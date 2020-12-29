@@ -11,8 +11,7 @@ Spring Cache can be integrated with Cloud Memoerystore.
 
 ### Caching Configuration
 #### @EnableCaching annotation
-`@EnableCaching` will start the search for a `CacheManger` bean to configure the cache provider.
-
+`@EnableCaching` triggers a post-processor that inspects every Spring bean for the presence of caching annotations on public methods.
 ## Demo
 
 ## Features
