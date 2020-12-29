@@ -8,7 +8,11 @@ Spring Cache can be integrated with Cloud Memoerystore.
 - org.springframework.boot
   - `spring-boot-starter-cache`
   - `spring-boot-starter-data-redis`
-  
+
+### Caching Configuration
+#### @EnableCaching annotation
+`@EnableCaching` will start the search for a `CacheManger` bean to configure the cache provider.
+
 ## Demo
 
 ## Features
