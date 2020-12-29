@@ -1,6 +1,6 @@
 # Spring Cloud GCP for Cloud Memorystore
 
-Overview
+Cloud Memorystore for Redis provides a fully managed in-memory data store service.
 
 ## Description
 
