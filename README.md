@@ -33,6 +33,10 @@ Spring Boot tries to detect the following providers:
 - Caffeine
 - Simple
 
+##### RedisCacheManager
+If Redis is available and configured, a RedisCacheManager is auto-configured.
+
+
 ## Demo
 
 ## Features
