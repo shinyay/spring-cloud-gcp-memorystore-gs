@@ -1,4 +1,4 @@
-# Name
+# Spring Cloud GCP for Cloud Memorystore
 
 Overview
 
