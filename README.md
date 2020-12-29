@@ -1,10 +1,14 @@
 # Spring Cloud GCP for Cloud Memorystore
 
 Cloud Memorystore for Redis provides a fully managed in-memory data store service.
-Spring Caching can be integrated with Cloud Memoerystore.
+Spring Cache can be integrated with Cloud Memoerystore.
 
 ## Description
-
+### Dependency
+- org.springframework.boot
+  - `spring-boot-starter-cache`
+  - `spring-boot-starter-data-redis`
+  
 ## Demo
 
 ## Features
