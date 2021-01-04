@@ -11,6 +11,7 @@ import java.util.*
 @RestController("/api/v1")
 class BookController(val repository: BookRepository) {
 
+    @Cacheable(value = ["books"], key = "isbn")
     @GetMapping("/books/{isbn}")
     fun getBook(@PathVariable isbn: String): Optional<Book> {
         return repository.findById(isbn)
