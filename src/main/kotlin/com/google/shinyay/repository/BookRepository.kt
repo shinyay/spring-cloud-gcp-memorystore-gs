@@ -1,9 +1,9 @@
 package com.google.shinyay.repository
 
 import com.google.shinyay.entity.Book
+import org.springframework.data.repository.CrudRepository
+import org.springframework.stereotype.Repository
 
-interface BookRepository {
-    fun getAllBooks(): MutableList<Book>
-    fun getByTitle(title: String): Book
-    fun getByIsbn(isbn: String): Book
+@Repository
+interface BookRepository : CrudRepository<Book, String>{
 }
