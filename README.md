@@ -36,6 +36,8 @@ Spring Boot tries to detect the following providers:
 ##### RedisCacheManager
 If Redis is available and configured, a RedisCacheManager is auto-configured.
 
+### @Cacheable
+@Cacheable annotation takes care of putting the result into the cache.
 
 ## Demo
 
