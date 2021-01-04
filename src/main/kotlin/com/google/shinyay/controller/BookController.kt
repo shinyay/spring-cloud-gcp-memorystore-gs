@@ -1,4 +1,7 @@
 package com.google.shinyay.controller
 
-class BookController {
+import org.springframework.web.bind.annotation.RestController
+
+@RestController
+class BookController() {
 }
