@@ -1,6 +1,9 @@
 package com.google.shinyay.repository
 
+import com.google.shinyay.entity.Book
+
 interface BookRepository {
-    fun getByTitle(title: String)
-    fun getByIsbn(isbn: String)
+    fun getAllBooks(): MutableList<Book>
+    fun getByTitle(title: String): Book
+    fun getByIsbn(isbn: String): Book
 }
