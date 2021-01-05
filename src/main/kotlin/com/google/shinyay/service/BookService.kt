@@ -25,4 +25,8 @@ class BookService(val repository: BookRepository) {
         repository.deleteById(isbn)
     }
 
+    @CachePut(value = ["book"], key = "#book.isbn")
+    fun updateBook(book: Book): Book {
+        return repository.save(book)
+    }
 }
