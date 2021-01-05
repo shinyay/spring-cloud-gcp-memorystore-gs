@@ -22,4 +22,13 @@ class BookController(val service: BookService) {
         return ResponseEntity<Book>(service.saveBook(book), HttpStatus.OK)
     }
 
+    @PutMapping("/books/{isbn}")
+    fun updateBook(@RequestBody book: Book, @PathVariable isbn: String): ResponseEntity<Book> {
+        val registeredBook = service.getBook(isbn)
+        if (registeredBook != null) {
+            registeredBook.title = book.title
+            return ResponseEntity<Book> (service.updateBook(registeredBook), HttpStatus.OK)
+        }
+        return ResponseEntity<Book>(registeredBook, HttpStatus.ACCEPTED)
+    }
 }
