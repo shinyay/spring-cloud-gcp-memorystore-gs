@@ -31,4 +31,10 @@ class BookController(val service: BookService) {
         }
         return ResponseEntity<Book>(registeredBook, HttpStatus.ACCEPTED)
     }
+
+    @DeleteMapping("/books/{isbn}")
+    fun deleteBook(@PathVariable isbn: String): ResponseEntity<String> {
+        service.deleteBookByIsbn(isbn)
+        return ResponseEntity<String>("Deleted: $isbn", HttpStatus.OK)
+    }
 }
