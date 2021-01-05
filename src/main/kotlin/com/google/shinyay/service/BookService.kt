@@ -2,6 +2,7 @@ package com.google.shinyay.service
 
 import com.google.shinyay.entity.Book
 import com.google.shinyay.repository.BookRepository
+import org.springframework.cache.annotation.CacheEvict
 import org.springframework.cache.annotation.Cacheable
 import org.springframework.stereotype.Service
 import java.util.*
@@ -16,5 +17,10 @@ class BookService(val repository: BookRepository) {
 
     fun saveBook(book: Book): Book {
         return repository.save(book)
+    }
+
+    @CacheEvict(value = ["book"], key = "isbn")
+    fun deleteBookByIsbn(isbn: String) {
+        repository.deleteById(isbn)
     }
 }
