@@ -12,8 +12,8 @@ import java.util.*
 class BookService(val repository: BookRepository) {
 
     @Cacheable(value = ["books"], key = "#isbn")
-    fun getBook(isbn: String): Optional<Book> {
-        return repository.findById(isbn)
+    fun getBook(isbn: String): Book? {
+        return repository.findById(isbn).orElse(null)
     }
 
     fun saveBook(book: Book): Book {
