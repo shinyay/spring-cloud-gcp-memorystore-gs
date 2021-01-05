@@ -6,9 +6,7 @@ import com.google.shinyay.service.BookService
 import org.springframework.cache.annotation.Cacheable
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 import java.util.*
 
 @RestController("/api/v1")
@@ -17,5 +15,10 @@ class BookController(val service: BookService) {
     @GetMapping("/books/{isbn}")
     fun getBook(@PathVariable isbn: String): ResponseEntity<Book> {
         return ResponseEntity<Book>(service.getBook(isbn), HttpStatus.OK)
+    }
+
+    @PostMapping("/books")
+    fun saveBook(@RequestBody book: Book): ResponseEntity<Book> {
+        return ResponseEntity<Book>(service.saveBook(book), HttpStatus.OK)
     }
 }
