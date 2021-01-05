@@ -13,4 +13,8 @@ class BookService(val repository: BookRepository) {
     fun getBook(isbn: String): Optional<Book> {
         return repository.findById(isbn)
     }
+
+    fun saveBook(book: Book): Book {
+        return repository.save(book)
+    }
 }
