@@ -12,8 +12,8 @@ import java.util.*
 @RestController("/api/v1")
 class BookController(val service: BookService) {
 
-    @GetMapping("/books/{isbn}")
-    fun getBook(@PathVariable isbn: String): ResponseEntity<Book> {
+    @GetMapping("/books")
+    fun getBook(@RequestParam isbn: String): ResponseEntity<Book> {
         return ResponseEntity<Book>(service.getBook(isbn), HttpStatus.OK)
     }
 
@@ -21,4 +21,5 @@ class BookController(val service: BookService) {
     fun saveBook(@RequestBody book: Book): ResponseEntity<Book> {
         return ResponseEntity<Book>(service.saveBook(book), HttpStatus.OK)
     }
+
 }
