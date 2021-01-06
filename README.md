@@ -45,6 +45,12 @@ If Redis is available and configured, a RedisCacheManager is auto-configured.
 ```shell script
 $ gcloud services enable redis.googleapis.com
 ```
+
+#### Create Redis Instance
+```shell script
+$ gcloud redis instances create my-redis --size=1 --region=us-central1
+```
+
 ## Features
 
 - feature:1
