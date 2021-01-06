@@ -52,6 +52,10 @@ $ gcloud redis instances create my-redis --size=1 --region=us-central1
 $ gcloud redis instances describe my-redis --region us-central1
 ```
 
+##### Host Address
+```shell script
+$ gcloud redis instances describe my-redis --region us-central1 --format json | jq -r '.host'
+```
 
 
 ## Features
