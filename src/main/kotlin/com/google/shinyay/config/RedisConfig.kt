@@ -15,6 +15,7 @@ import org.springframework.data.redis.serializer.GenericToStringSerializer
 @Configuration
 @ComponentScan("com.google.shinyay")
 @EnableRedisRepositories("com.google.shinyay.repository")
+@PropertySource("classpath:application.yml")
 class RedisConfig {
 
     @Bean
