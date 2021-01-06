@@ -68,6 +68,11 @@ $ set -x REDIS_HOST (gcloud redis instances describe my-redis --region us-centra
 $ curl -X POST -H "Content-Type: application/json" -d '{"isbn":"1111","title":"demo"}' localhost:8080/api/v1/books
 ```
 
+#### Retrieve Data
+```shell script
+$ curl -X GET "localhost:8080/api/v1/books?isbn=1111"
+```
+
 ## Features
 
 - feature:1
