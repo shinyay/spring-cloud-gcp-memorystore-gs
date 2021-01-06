@@ -57,6 +57,10 @@ $ gcloud redis instances describe my-redis --region us-central1
 $ gcloud redis instances describe my-redis --region us-central1 --format json | jq -r '.host'
 ```
 
+#### Configure Redis to Connect
+```shell script
+$ set -x REDIS_HOST (gcloud redis instances describe my-redis --region us-central1 --format json | jq -r '.host')
+```
 
 ## Features
 
