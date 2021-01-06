@@ -40,7 +40,10 @@ If Redis is available and configured, a RedisCacheManager is auto-configured.
 @Cacheable annotation takes care of putting the result into the cache.
 
 ## Demo
-
+### Set up Cloud Memorystore for Redis
+```shell script
+$ gcloud services enable redis.googleapis.com
+```
 ## Features
 
 - feature:1
