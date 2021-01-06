@@ -49,7 +49,10 @@ $ gcloud services enable redis.googleapis.com
 #### Create Redis Instance
 ```shell script
 $ gcloud redis instances create my-redis --size=1 --region=us-central1
+$ gcloud redis instances describe my-redis --region us-central1
 ```
+
+
 
 ## Features
 
