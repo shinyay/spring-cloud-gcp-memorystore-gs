@@ -41,6 +41,7 @@ If Redis is available and configured, a RedisCacheManager is auto-configured.
 
 ## Demo
 ### Set up Cloud Memorystore for Redis
+#### Enable Service
 ```shell script
 $ gcloud services enable redis.googleapis.com
 ```
