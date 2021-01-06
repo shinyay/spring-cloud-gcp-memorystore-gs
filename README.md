@@ -62,6 +62,12 @@ $ gcloud redis instances describe my-redis --region us-central1 --format json | 
 $ set -x REDIS_HOST (gcloud redis instances describe my-redis --region us-central1 --format json | jq -r '.host')
 ```
 
+### Operate App
+#### Save Data
+```shell script
+$ curl -X POST -H "Content-Type: application/json" -d '{"isbn":"1111","title":"demo"}' localhost:8080/api/v1/books
+```
+
 ## Features
 
 - feature:1
