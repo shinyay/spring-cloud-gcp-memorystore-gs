@@ -2,3 +2,5 @@ spring:
   redis:
     host: ${REDIS_HOST}
     port: 6379
+  cache:
+    type: redis
