@@ -8,8 +8,7 @@ import org.springframework.data.redis.connection.jedis.JedisConnectionFactory
 import org.springframework.data.redis.core.RedisTemplate
 import org.springframework.data.redis.repository.configuration.EnableRedisRepositories
 import org.springframework.data.redis.serializer.GenericToStringSerializer
-
-
+import org.springframework.data.redis.serializer.StringRedisSerializer
 
 
 @Configuration
@@ -25,6 +24,7 @@ class RedisConfig {
     fun redisTemplate(): RedisTemplate<String, Any>? {
         return RedisTemplate<String, Any>().apply {
             setConnectionFactory(jedisConnectionFactory())
+            keySerializer = StringRedisSerializer()
             valueSerializer = GenericToStringSerializer(Any::class.java)
         }
     }
