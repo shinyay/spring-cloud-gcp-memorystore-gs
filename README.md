@@ -115,6 +115,7 @@ If Redis is available and configured, a RedisCacheManager is auto-configured.
 |@Caching|Aggregate multiple annotations of the same typed|
 
 #### Conditional Caching
+##### Condition Parameter
 You can define the condition with SpEL expression
 ```kotlin
 @CachePut(value="addresses", condition="#customer.name=='Tom'")
