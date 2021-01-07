@@ -18,6 +18,11 @@ Therefore, I used *Jedis*.
 #### JedisConnectionFactory (RedisConnectionFactory)
 You need to add Jedis dependency "`redis.clients:jedis`" to use `RedisConnectionFactory` even if you've added `spring-boot-starter-data-redis`
 
+```kotlin
+@Bean
+fun jedisConnectionFactory(): JedisConnectionFactory = JedisConnectionFactory()
+```
+
 ### Caching Configuration
 #### @EnableCaching annotation
 `@EnableCaching` triggers a post-processor that inspects every Spring bean for the presence of caching annotations on public methods.
