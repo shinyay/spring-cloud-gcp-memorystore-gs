@@ -27,6 +27,14 @@ fun jedisConnectionFactory(): JedisConnectionFactory = JedisConnectionFactory()
 RedisTemplate uses `JdkSerializationRedisSerializer` by default.
 By `JdkSerializationRedisSerializer`, Redis stores "Serialized Data" to Key and Value.
 
+Redis Serializer has some kinds of serializer:
+
+|Serializer|Description|
+|----------|-----------|
+|JdkSerializationRedisSerializer|Java Serialization Redis serializer.<br>Delegates to the default (Java based) serializer and DefaultDeserializer.|
+|GenericToStringSerializer|Generic String to byte[] (and back) serializer.<br>The Strings are convert into bytes and vice-versa using the specified charset (by default UTF-8).|
+|StringRedisSerializer|Simple String to byte[] (and back) serializer.<br>Converts Strings into bytes and vice-versa using the specified charset (by default UTF-8).|
+|GenericJackson2JsonRedisSerializer|Generic Jackson 2-based RedisSerializer that maps objects to JSON using dynamic typing.|
 
 ### Caching Configuration
 #### @EnableCaching annotation
