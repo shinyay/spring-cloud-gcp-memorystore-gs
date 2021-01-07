@@ -67,6 +67,18 @@ class RedisConfig
 
 By `@EnableRedisRepositories`, Spring scan your packages for repository classes/interfaces and then use Redis as the storage to persist your objects to
 
+#### @RedisHash / @Id
+`@RedisHash` marks Objects as aggregate roots to be stored in a Redis hash.
+
+- `@RedisHash` -> Hash in Redis
+- `@Id` -> Key
+
+```kotlin
+@RedisHash("book")
+data class Book(@Id val isbn: String,
+                var title: String) : Serializable
+```
+
 ### Caching Configuration
 #### @EnableCaching annotation
 `@EnableCaching` triggers a post-processor that inspects every Spring bean for the presence of caching annotations on public methods.
@@ -94,8 +106,6 @@ Spring Boot tries to detect the following providers:
 ##### RedisCacheManager
 If Redis is available and configured, a RedisCacheManager is auto-configured.
 
-### @Cacheable
-@Cacheable annotation takes care of putting the result into the cache.
 
 ## Demo
 ### Set up Cloud Memorystore for Redis
