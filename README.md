@@ -25,6 +25,8 @@ fun jedisConnectionFactory(): JedisConnectionFactory = JedisConnectionFactory()
 
 #### RedisTemplate
 RedisTemplate uses `JdkSerializationRedisSerializer` by default.
+By `JdkSerializationRedisSerializer`, Redis stores "Serialized Data" to Key and Value.
+
 
 ### Caching Configuration
 #### @EnableCaching annotation
