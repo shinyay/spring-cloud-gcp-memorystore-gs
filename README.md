@@ -110,6 +110,12 @@ If Redis is available and configured, a RedisCacheManager is auto-configured.
 |Annotation|Description|
 |----------|-----------|
 |@Cacheable|Putting the result into the cache.|
+|@CacheEvict|Removing items from cache|
+|||
+|||
+|||
+|||
+|||
 
 ## Demo
 ### Set up Cloud Memorystore for Redis
