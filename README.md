@@ -13,7 +13,7 @@ Spring Cache can be integrated with Cloud Memoerystore.
 
 ### Redis Configuration
 Spring App needs `RedisConnectionFactory` and `RedisTemplate` to connect with Redis.
-Therefore, I used *Jedis*.
+Therefore, I used **Jedis**.
 
 #### JedisConnectionFactory (RedisConnectionFactory)
 You need to add Jedis dependency "`redis.clients:jedis`" to use `RedisConnectionFactory` even if you've added `spring-boot-starter-data-redis`
@@ -35,6 +35,14 @@ Redis Serializer has some kinds of serializer:
 |GenericToStringSerializer|Generic String to byte[] (and back) serializer.<br>The Strings are convert into bytes and vice-versa using the specified charset (by default UTF-8).|
 |StringRedisSerializer|Simple String to byte[] (and back) serializer.<br>Converts Strings into bytes and vice-versa using the specified charset (by default UTF-8).|
 |GenericJackson2JsonRedisSerializer|Generic Jackson 2-based RedisSerializer that maps objects to JSON using dynamic typing.|
+
+##### Issue for JdkSerializationRedisSerializer
+If you use `JdkSerializationRedisSerializer` to store "Non-Serialized Data", you have some characters in front of data.
+
+```
+\xac\xed\x00\x05t\x00\x02
+```
+
 
 ### Caching Configuration
 #### @EnableCaching annotation
