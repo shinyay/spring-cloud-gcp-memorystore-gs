@@ -116,13 +116,19 @@ If Redis is available and configured, a RedisCacheManager is auto-configured.
 
 #### Conditional Caching
 ##### Condition Parameter
-You can define the condition with SpEL expression
+We can define the condition with SpEL expression
 ```kotlin
 @CachePut(value="addresses", condition="#customer.name=='Tom'")
 fun getAddress(customer: Customer) {...}
 ```
 
+##### Unless Parameter
+We can also control the caching **based on the output of the method rather than the input** – via the unless parameter
 
+```kotlin
+@CachePut(value="addresses", unless="#result.length()<64")
+fun getAddress(customer: Customer) {...}
+```
 
 ## Demo
 ### Set up Cloud Memorystore for Redis
