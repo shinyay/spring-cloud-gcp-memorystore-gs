@@ -54,6 +54,19 @@ Therefore, you should configure **RedisTemplate** for the following:
 - `hashKeySerializer`
 - `hashValueSerializer`
 
+#### @EnableRedisRepositories
+Annotation to activate Redis repositories. If no base package is configured through either value(), basePackages() or basePackageClasses() it will trigger scanning of the package of annotated class.
+
+```kotlin
+@Configuration
+@ComponentScan("com.google.shinyay")
+@EnableRedisRepositories("com.google.shinyay.repository")
+@PropertySource("classpath:application.yml")
+class RedisConfig
+```
+
+By `@EnableRedisRepositories`, Spring scan your packages for repository classes/interfaces and then use Redis as the storage to persist your objects to
+
 ### Caching Configuration
 #### @EnableCaching annotation
 `@EnableCaching` triggers a post-processor that inspects every Spring bean for the presence of caching annotations on public methods.
