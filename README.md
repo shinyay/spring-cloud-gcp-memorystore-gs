@@ -114,6 +114,15 @@ If Redis is available and configured, a RedisCacheManager is auto-configured.
 |@CachePut|Updating the cache, without interfering with the method execution|
 |@Caching|Aggregate multiple annotations of the same typed|
 
+#### @Caching
+We can use multiple annotations of the same type for caching a method.
+
+```kotlin
+@Caching(evict = { 
+  @CacheEvict("addresses"), 
+  @CacheEvict(value="directory", key="#customer.name") })
+fun getAddress(customer: Customer) {...}
+```
 #### Conditional Caching
 ##### Condition Parameter
 We can define the condition with SpEL expression
