@@ -114,6 +114,14 @@ If Redis is available and configured, a RedisCacheManager is auto-configured.
 |@CachePut|Updating the cache, without interfering with the method execution|
 |@Caching|Aggregate multiple annotations of the same typed|
 
+#### Conditional Caching
+You can define the condition with SpEL expression
+```kotlin
+@CachePut(value="addresses", condition="#customer.name=='Tom'")
+fun getAddress(customer: Customer) {...}
+```
+
+
 
 ## Demo
 ### Set up Cloud Memorystore for Redis
