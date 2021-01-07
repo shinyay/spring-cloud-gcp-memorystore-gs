@@ -11,6 +11,10 @@ Spring Cache can be integrated with Cloud Memoerystore.
 - redis.clients
   - `jedis`
 
+### Redis Configuration
+Spring App needs `RedisConnectionFactory` and `RedisTemplate` to connect with Redis.
+Therefore I used *Jedis*.
+
 ### Caching Configuration
 #### @EnableCaching annotation
 `@EnableCaching` triggers a post-processor that inspects every Spring bean for the presence of caching annotations on public methods.
