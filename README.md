@@ -43,6 +43,12 @@ If you use `JdkSerializationRedisSerializer` to store "Non-Serialized Data", you
 \xac\xed\x00\x05t\x00\x02
 ```
 
+Therefore, you should configure **RedisTemplate** for the following:
+
+- `keySerializer`
+- `valueSerializer`
+- `hashKeySerializer`
+- `hashValueSerializer`
 
 ### Caching Configuration
 #### @EnableCaching annotation
