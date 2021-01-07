@@ -1,5 +1,6 @@
 package com.google.shinyay.config
 
+import com.fasterxml.jackson.databind.ser.std.StringSerializer
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.ComponentScan
 import org.springframework.context.annotation.Configuration
@@ -26,6 +27,8 @@ class RedisConfig {
             setConnectionFactory(jedisConnectionFactory())
             keySerializer = StringRedisSerializer()
             valueSerializer = GenericToStringSerializer(Any::class.java)
+            hashKeySerializer = StringRedisSerializer()
+            hashValueSerializer = StringRedisSerializer()
         }
     }
 }
