@@ -23,6 +23,10 @@ You need to add Jedis dependency "`redis.clients:jedis`" to use `RedisConnection
 fun jedisConnectionFactory(): JedisConnectionFactory = JedisConnectionFactory()
 ```
 
+##### Redis Client
+- [Jedis](https://github.com/redis/jedis)
+- [Lettuce](https://github.com/lettuce-io/lettuce-core)
+
 #### RedisTemplate
 RedisTemplate uses `JdkSerializationRedisSerializer` by default.
 By `JdkSerializationRedisSerializer`, Redis stores "Serialized Data" to Key and Value.
