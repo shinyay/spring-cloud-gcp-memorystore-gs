@@ -8,7 +8,8 @@ Spring Cache can be integrated with Cloud Memoerystore.
 - org.springframework.boot
   - `spring-boot-starter-cache`
   - `spring-boot-starter-data-redis`
-  - `redis.clients:jedis`
+- redis.clients
+  - `jedis`
 
 ### Caching Configuration
 #### @EnableCaching annotation
