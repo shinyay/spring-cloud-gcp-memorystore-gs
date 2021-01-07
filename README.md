@@ -23,6 +23,9 @@ You need to add Jedis dependency "`redis.clients:jedis`" to use `RedisConnection
 fun jedisConnectionFactory(): JedisConnectionFactory = JedisConnectionFactory()
 ```
 
+#### RedisTemplate
+RedisTemplate uses `JdkSerializationRedisSerializer` by default.
+
 ### Caching Configuration
 #### @EnableCaching annotation
 `@EnableCaching` triggers a post-processor that inspects every Spring bean for the presence of caching annotations on public methods.
